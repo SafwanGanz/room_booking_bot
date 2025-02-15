@@ -1,7 +1,7 @@
 {
-  "port": 3000,  // The port on which your application will run. You can change it if needed.
-  "mongo": "",   // MongoDB connection string. Get this from your MongoDB Atlas or local MongoDB instance.
-  "token": "",   // Bot token obtained from the BotFather on Telegram. This is required to authenticate your bot.
-  "base_URL": "http://localhost:3000",  // Base URL of your application. Change this to your domain if hosted online.
-  "admins": ""   // List of admin user IDs (comma-separated). These users will have special privileges in the bot.
+  "port": 3000,
+  "mongo": "",
+  "token": "",
+  "base_URL": "http://localhost:3000",
+  "admins": ""
 }
