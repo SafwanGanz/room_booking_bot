@@ -1,4 +1,4 @@
-# Node.js Chatbot for Termux
+# Node.js room booking bot for Termux/Windows/Linux
 
 ## 🚀 Installation
 
