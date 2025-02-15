@@ -4,8 +4,8 @@
 
 1. **Clone the Repository:**
    ```bash
-   git clone <repository_url>
-   cd <repository_folder>
+   git clone https://github.con/SafwanGanz/room_booking_bot
+   cd room_booking_bot
    ```
 
 2. **Run the Installation Script:**
