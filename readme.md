@@ -27,8 +27,8 @@
 1. **Install Node.js:** Download and install from [nodejs.org](https://nodejs.org/).
 2. **Open Command Prompt:**
    ```cmd
-   git clone <repository_url>
-   cd <repository_folder>
+   git clone https://github.con/SafwanGanz/room_booking_bot
+   cd room_booking_bot
    npm install
    node index.js
    ```
@@ -41,8 +41,8 @@
    ```
 2. **Clone and Start:**
    ```bash
-   git clone <repository_url>
-   cd <repository_folder>
+   git clone https://github.con/SafwanGanz/room_booking_bot
+   cd room_booking_bot
    npm install
    node index.js
    ```
@@ -50,11 +50,7 @@
 ## 🛠️ Configuration
 1. Create a `config.json` file:
    ```json
-   {
-     "token": "YOUR_TELEGRAM_BOT_TOKEN",
-     "base_URL": "https://your-api-url.com",
-     "admins": "YOUR_ADMIN_ID"
-   }
+   
    ```
 
 2. Replace the placeholders with your actual details.
