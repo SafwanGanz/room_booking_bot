@@ -49,7 +49,7 @@
 
 ## 🛠️ Configuration
 1. Edit `config.json` file:
-   ```json
+   ```bash
    {
   "port": 3000,  // The port on which your application will run. You can change it if needed.
   "mongo": "",   // MongoDB connection string. Get this from your MongoDB Atlas or local MongoDB instance.
