@@ -113,5 +113,5 @@ Ensure the following API endpoints are available:
 - **Command not recognized:** Update the bot or recheck commands.
 - **API errors:** Verify the backend server and API endpoints.
 
-Enjoy your chatbot! 🤖🎉
+Happy Coding! 🤖🎉
 
