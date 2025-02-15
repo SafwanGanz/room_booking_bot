@@ -16,7 +16,7 @@
 
 3. **Start the Bot:**
    ```bash
-   node index.js
+   npm start
    ```
 
 ## ⚙️ Requirements
