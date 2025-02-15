@@ -23,6 +23,30 @@
 - Termux (Android)
 - Node.js (installed automatically)
 
+## 🖥️ Windows Installation
+1. **Install Node.js:** Download and install from [nodejs.org](https://nodejs.org/).
+2. **Open Command Prompt:**
+   ```cmd
+   git clone <repository_url>
+   cd <repository_folder>
+   npm install
+   node index.js
+   ```
+
+## 🐧 Linux Installation
+1. **Install Node.js:**
+   ```bash
+   sudo apt update
+   sudo apt install nodejs npm git -y
+   ```
+2. **Clone and Start:**
+   ```bash
+   git clone <repository_url>
+   cd <repository_folder>
+   npm install
+   node index.js
+   ```
+
 ## 🛠️ Configuration
 1. Create a `config.json` file:
    ```json
