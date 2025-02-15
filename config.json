@@ -2,5 +2,6 @@
   "port": 3000
   "mongo": "",
   "token": "",
-  "base_URL": "http://localhost:3000"
+  "base_URL": "http://localhost:3000",
+  "admins": ""
 }
