@@ -48,16 +48,25 @@
    ```
 
 ## 🛠️ Configuration
-1. Edit `config.json` file:
-   ```bash
-   {
-  "port": 3000,  // The port on which your application will run. You can change it if needed.
-  "mongo": "",   // MongoDB connection string. Get this from your MongoDB Atlas or local MongoDB instance.
-  "token": "",   // Bot token obtained from the BotFather on Telegram. This is required to authenticate your bot.
-  "base_URL": "http://localhost:3000",  // Base URL of your application. Change this to your domain if hosted online.
-  "admins": ""   // List of admin user IDs (comma-separated). These users will have special privileges in the bot.
-}
-   ```
+
+1. Edit the `config.json` file:
+
+    ```json
+    {
+      "port": 3000,
+      "mongo": "",
+      "token": "",
+      "base_URL": "http://localhost:3000",
+      "admins": ""
+    }
+    ```
+
+    - **port**: The port on which your application will run.  
+    - **mongo**: MongoDB connection string (from MongoDB Atlas or local instance).  
+    - **token**: Bot token obtained from BotFather on Telegram.  
+    - **base_URL**: Base URL of your application (change to your domain if hosted online).  
+    - **admins**: Comma-separated list of admin user IDs with special privileges.  
+
 
 2. Replace the placeholders with your actual details.
 
