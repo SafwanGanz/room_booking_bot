@@ -1,6 +1,6 @@
 # Node.js room booking bot for Termux/Windows/Linux
 
-## 🚀 Installation
+## 🚀 Installation On Termux
 
 1. **Clone the Repository:**
    ```bash
