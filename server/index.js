@@ -50,6 +50,16 @@ const adminSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true }
 });
 
+const feedbackSchema = new mongoose.Schema({
+    userId: { type: Number, required: true },
+    name: { type: String, required: true },
+    rating: { type: Number, required: true, min: 1, max: 5 },
+    feedback: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now }
+});
+
+const Feedback = mongoose.model('Feedback', feedbackSchema);
+
 const User = mongoose.model('User', userSchema);
 const Room = mongoose.model('Room', roomSchema);
 const Admin = mongoose.model('Admin', adminSchema);
@@ -169,6 +179,98 @@ app.delete('/api/admin/users/:userId', async (req, res) => {
             return res.status(404).json({ error: 'User not found' });
         }
         res.json({ message: 'User deleted successfully' });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
+app.get('/api/admin/bookings', async (req, res) => {
+    try {
+        const bookings = await Room.find({ isOccupied: true }).populate('currentOccupant');
+        res.json(bookings);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
+app.get('/api/admin/bookings/:status', async (req, res) => {
+    try {
+        const status = req.params.status;
+        let query = {};
+
+        switch (status) {
+            case 'pending':
+                query = { status: 'pending' };
+                break;
+            case 'completed':
+                query = { status: 'completed' };
+                break;
+            case 'cancelled':
+                query = { status: 'cancelled' };
+                break;
+            default:
+                return res.status(400).json({ error: 'Invalid status' });
+        }
+
+        const bookings = await Room.find(query).populate('currentOccupant');
+        res.json(bookings);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+app.post('/api/feedback', async (req, res) => {
+    const { userId, name, rating, feedback } = req.body;
+
+    if (!userId || !name || !rating || !feedback) {
+        return res.status(400).json({ error: 'All fields are required' });
+    }
+
+    try {
+        const newFeedback = new Feedback({ userId, name, rating, feedback });
+        await newFeedback.save();
+        res.status(201).json({ message: 'Feedback submitted successfully' });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+app.get('/api/feedback', async (req, res) => {
+    try {
+        const feedbacks = await Feedback.find();
+        res.json(feedbacks);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+app.delete('/api/feedback/:id', async (req, res) => {
+    try {
+        const feedback = await Feedback.findByIdAndDelete(req.params.id);
+        if (!feedback) {
+            return res.status(404).json({ error: 'Feedback not found' });
+        }
+        res.json({ message: 'Feedback deleted successfully' });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+app.put('/api/feedback/:id', async (req, res) => {
+    const { feedback } = req.body;
+
+    if (!feedback) {
+        return res.status(400).json({ error: 'Feedback is required' });
+    }
+
+    try {
+        const updatedFeedback = await Feedback.findByIdAndUpdate(
+            req.params.id,
+            { feedback },
+            { new: true }
+        );
+        res.json({ message: 'Feedback updated successfully', feedback: updatedFeedback });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
