@@ -48,12 +48,20 @@
    ```
 
 ## 🛠️ Configuration
-1. Create a `config.json` file:
+1. Edit `config.json` file:
    ```json
-   
+   {
+  "port": 3000,  // The port on which your application will run. You can change it if needed.
+  "mongo": "",   // MongoDB connection string. Get this from your MongoDB Atlas or local MongoDB instance.
+  "token": "",   // Bot token obtained from the BotFather on Telegram. This is required to authenticate your bot.
+  "base_URL": "http://localhost:3000",  // Base URL of your application. Change this to your domain if hosted online.
+  "admins": ""   // List of admin user IDs (comma-separated). These users will have special privileges in the bot.
+}
    ```
 
 2. Replace the placeholders with your actual details.
+
+3. Remove Comments Eg: // The port....
 
 ## 🧩 Features
 - User registration and room booking
