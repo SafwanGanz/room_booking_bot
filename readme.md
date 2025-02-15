@@ -70,8 +70,6 @@
 
 2. Replace the placeholders with your actual details.
 
-3. Remove Comments Eg: // The port....
-
 ## 🧩 Features
 - User registration and room booking
 - Admin panel for managing rooms and users
