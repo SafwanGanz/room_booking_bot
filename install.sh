@@ -146,7 +146,7 @@ main() {
     print_centered "Version 2.0" "$yellow"
     echo
     
-    # Check if running as root
+
     if [ "$EUID" -ne 0 ]; then
         echo -e "${red}❌ Please run as root${reset}"
         exit 1
@@ -173,7 +173,6 @@ main() {
     echo -e "${yellow}1. Development mode: ${green}Ctrl+C${reset}"
     echo -e "${yellow}2. Production mode: ${green}pm2 stop chatbot${reset}"
     
-    # Ask to start the bot
     read -p "Would you like to start the bot now? (y/n) " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
