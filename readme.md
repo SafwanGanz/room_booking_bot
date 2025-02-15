@@ -1,6 +1,6 @@
 ![NodeJs](https://i.ibb.co/j9BshMf0/268261472-271fb48e-0161-4063-b41e-29e99acd1b3d.png)
 
-# Node.js room booking bot for Termux/Windows/Linux
+# Node.js room booking bot Termux/Windows/Linux
 
 ## 🚀 Installation On Termux
 
