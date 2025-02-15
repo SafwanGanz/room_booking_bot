@@ -80,16 +80,6 @@ install_dependencies() {
 }
 
 
-
-DEBUG_MODE=false
-LOG_LEVEL=info
-EOF
-        echo -e "${green}✅ Created .env file${reset}"
-        echo -e "${yellow}⚠️ Please update the .env file with your actual credentials${reset}"
-    fi
-}
-
-
 install_npm_packages() {
     print_centered "📦 Installing NPM Packages..." "$blue"
     
